@@ -1,0 +1,16 @@
+.relative {
+  position: relative;
+}
+
+.relative button {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  border: none;
+  cursor: pointer;
+  background: transparent;
+}
+
+.relative svg {
+  display: block;
+}

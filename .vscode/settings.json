@@ -1,0 +1,19 @@
+{
+  "files.exclude": {
+    ".editorconfig": true,
+    ".prettierrc.json": true,
+    ".prettierignore": true,
+    "package-lock.json": true,
+    "package.json": true,
+    "AGENTS.md": true,
+    "CLAUDE.md": true,
+    "eslint.config.mjs": true,
+    "next.config.js": true,
+    "README.md": true,
+    "tsconfig.json": true,
+    "yarn.lock": true,
+    "node_modules": true,
+    "postcss.config.mjs": true,
+    ".vscode": true
+  }
+}
