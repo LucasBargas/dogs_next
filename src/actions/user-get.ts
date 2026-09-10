@@ -5,7 +5,7 @@ import { USER_GET } from "../functions/api";
 import apiError from "../functions/api-error";
 import { IUser } from "../types/user";
 
-const userPost = async () => {
+const userGet = async () => {
   try {
     const token = (await cookies()).get("token")?.value;
 
@@ -18,6 +18,7 @@ const userPost = async () => {
       headers: {
         Authorization: `Bearer ${token}`,
       },
+      next: { revalidate: 60 },
     });
 
     if (!res.ok) throw new Error("Erro ao buscar informações do usuário.");
@@ -33,4 +34,4 @@ const userPost = async () => {
   }
 };
 
-export default userPost;
+export default userGet;
