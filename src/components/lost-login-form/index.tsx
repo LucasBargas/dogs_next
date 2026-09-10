@@ -13,9 +13,9 @@ const FormButton = () => {
   const { pending } = useFormStatus();
 
   return pending ? (
-    <Button disabled={pending}>Recuperando...</Button>
+    <Button disabled={pending}>Enviando...</Button>
   ) : (
-    <Button disabled={pending}>Recuperar</Button>
+    <Button disabled={pending}>Enviar</Button>
   );
 };
 
