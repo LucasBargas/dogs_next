@@ -18,15 +18,9 @@ export function TOKEN_VALIDATE_POST(token: string) {
   };
 }
 
-export function USER_GET(token: string) {
+export function USER_GET() {
   return {
     url: `${API_URL}/api/user`,
-    options: {
-      method: "GET",
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    },
   };
 }
 
