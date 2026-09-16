@@ -1,12 +1,12 @@
 export const API_URL = "https://dogsapi.origamid.dev/json";
 
-export function TOKEN_POST() {
+export const TOKEN_POST = () => {
   return {
     url: `${API_URL}/jwt-auth/v1/token`,
   };
-}
+};
 
-export function TOKEN_VALIDATE_POST(token: string) {
+export const TOKEN_VALIDATE_POST = (token: string) => {
   return {
     url: `${API_URL}/jwt-auth/v1/token/validate`,
     options: {
@@ -16,21 +16,21 @@ export function TOKEN_VALIDATE_POST(token: string) {
       },
     },
   };
-}
+};
 
-export function USER_GET() {
+export const USER_GET = () => {
   return {
     url: `${API_URL}/api/user`,
   };
-}
+};
 
-export function USER_POST() {
+export const USER_POST = () => {
   return {
     url: `${API_URL}/api/user`,
   };
-}
+};
 
-export function PHOTO_POST(formData: FormData, token: string) {
+export const PHOTO_POST = (formData: FormData, token: string) => {
   return {
     url: `${API_URL}/api/photo`,
     options: {
@@ -41,9 +41,9 @@ export function PHOTO_POST(formData: FormData, token: string) {
       body: formData,
     },
   };
-}
+};
 
-export function PHOTOS_GET({
+export const PHOTOS_GET = ({
   page,
   total,
   user,
@@ -51,7 +51,7 @@ export function PHOTOS_GET({
   page: number;
   total: number;
   user: number;
-}) {
+}) => {
   return {
     url: `${API_URL}/api/photo/?_page=${page}&_total=${total}&_user=${user}`,
     options: {
@@ -59,9 +59,9 @@ export function PHOTOS_GET({
       cache: "no-store" as const,
     },
   };
-}
+};
 
-export function PHOTO_GET(id: number) {
+export const PHOTO_GET = (id: number) => {
   return {
     url: `${API_URL}/api/photo/${id}`,
     options: {
@@ -69,9 +69,9 @@ export function PHOTO_GET(id: number) {
       cache: "no-store" as const,
     },
   };
-}
+};
 
-export function COMMENT_POST(id: number, body: object, token: string) {
+export const COMMENT_POST = (id: number, body: object, token: string) => {
   return {
     url: `${API_URL}/api/comment/${id}`,
     options: {
@@ -83,9 +83,9 @@ export function COMMENT_POST(id: number, body: object, token: string) {
       body: JSON.stringify(body),
     },
   };
-}
+};
 
-export function PHOTO_DELETE(id: number, token: string) {
+export const PHOTO_DELETE = (id: number, token: string) => {
   return {
     url: `${API_URL}/api/photo/${id}`,
     options: {
@@ -95,21 +95,21 @@ export function PHOTO_DELETE(id: number, token: string) {
       },
     },
   };
-}
+};
 
-export function PASSWORD_LOST() {
+export const PASSWORD_LOST = () => {
   return {
     url: `${API_URL}/api/password/lost`,
   };
-}
+};
 
-export function PASSWORD_RESET() {
+export const PASSWORD_RESET = () => {
   return {
     url: `${API_URL}/api/password/reset`,
   };
-}
+};
 
-export function STATS_GET(token: string) {
+export const STATS_GET = (token: string) => {
   return {
     url: `${API_URL}/api/stats`,
     options: {
@@ -119,4 +119,4 @@ export function STATS_GET(token: string) {
       },
     },
   };
-}
+};
