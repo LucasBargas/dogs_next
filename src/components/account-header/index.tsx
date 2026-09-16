@@ -38,7 +38,7 @@ export const AccountHeader = () => {
 
   return (
     <header className={styles.header}>
-      8<h1 className="title">{getTitle(pathname)}</h1>
+      <h1 className="title">{getTitle(pathname)}</h1>
       {mobile && (
         <button
           aria-label="Menu"
