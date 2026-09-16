@@ -1,0 +1,15 @@
+"use client";
+
+import React from "react";
+
+import { UserContext } from "../contexts/user-context";
+
+export const useUser = () => {
+  const context = React.useContext(UserContext);
+
+  if (!context) {
+    throw new Error("useUser must be used within a UserContextProvider");
+  }
+
+  return context;
+};
