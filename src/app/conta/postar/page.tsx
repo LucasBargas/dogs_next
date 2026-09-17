@@ -1,4 +1,7 @@
+import { AccountPhotoPost } from "@/src/components/account-photo-post";
 import { Metadata } from "next";
+
+export const runtime = "nodejs";
 
 export const metadata: Metadata = {
   title: "Dogs | Postar | Minha conta",
@@ -7,7 +10,7 @@ export const metadata: Metadata = {
 };
 
 const PostPage = () => {
-  return <div>PostPage</div>;
+  return <AccountPhotoPost />;
 };
 
 export default PostPage;

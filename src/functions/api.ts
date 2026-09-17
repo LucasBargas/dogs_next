@@ -30,16 +30,9 @@ export const USER_POST = () => {
   };
 };
 
-export const PHOTO_POST = (formData: FormData, token: string) => {
+export const PHOTO_POST = () => {
   return {
     url: `${API_URL}/api/photo`,
-    options: {
-      method: "POST",
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-      body: formData,
-    },
   };
 };
 
