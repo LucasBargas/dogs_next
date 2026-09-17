@@ -1,10 +1,12 @@
-"use client";
+import { Metadata } from "next";
 
-import { useUser } from "@/src/hooks/use-user";
+export const metadata: Metadata = {
+  title: "Dogs | Minha Conta",
+  description: "Página de conta do site Dogs desenvolvido por Lucas Bargas.",
+};
 
 const AccountPage = () => {
-  const { user } = useUser();
-  return <div>Conta: {user?.username}</div>;
+  return <div>Conta</div>;
 };
 
 export default AccountPage;
