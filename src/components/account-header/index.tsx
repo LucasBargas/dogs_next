@@ -8,6 +8,8 @@ import EstatisticasIcon from "../../icons/estatisticas-icon";
 import FeedIcon from "../../icons/feed-icon";
 import SairIcon from "../../icons/sair-icon";
 
+import logout from "@/src/actions/logout";
+import { useUser } from "@/src/hooks/use-user";
 import styles from "./styles.module.css";
 
 const getTitle = (pathname: string) => {
@@ -27,13 +29,15 @@ export const AccountHeader = () => {
   const mobile = useMedia("(max-width: 40rem)");
   const [mobileMenu, setMobileMenu] = React.useState(false);
   const pathname = usePathname();
+  const { setUserState } = useUser();
 
   const handleMenuClick = () => {
     setMobileMenu(false);
   };
 
-  const handleLogout = () => {
-    // userLogout();
+  const handleLogout = async () => {
+    await logout();
+    setUserState(null);
   };
 
   return (
