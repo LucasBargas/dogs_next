@@ -1,13 +1,36 @@
 "use server";
 
+import { PHOTOS_GET } from "../functions/api";
+import apiError from "../functions/api-error";
 import { IPhoto } from "../types/photo";
 
-const photosGet = async () => {
-  const res = await fetch(
-    "https://dogsapi.origamid.dev/json/api/photo/?_page=1&_total=6&_user=0",
-  );
+interface PhotosGetParams {
+  page?: number;
+  total?: number;
+  user?: 0 | string;
+}
 
-  return (await res.json()) as IPhoto[];
+const photosGet = async ({
+  page = 1,
+  total = 6,
+  user = 0,
+}: PhotosGetParams = {}) => {
+  try {
+    const { url } = PHOTOS_GET({ page, total, user });
+    const res = await fetch(url);
+
+    if (!res.ok) throw new Error("Erro ao buscar fotos.");
+
+    const data = (await res.json()) as IPhoto[];
+
+    return {
+      data,
+      ok: true,
+      error: "",
+    };
+  } catch (error: unknown) {
+    return apiError(error);
+  }
 };
 
 export default photosGet;

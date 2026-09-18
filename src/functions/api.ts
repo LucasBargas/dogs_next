@@ -43,14 +43,10 @@ export const PHOTOS_GET = ({
 }: {
   page: number;
   total: number;
-  user: number;
+  user: 0 | string;
 }) => {
   return {
     url: `${API_URL}/api/photo/?_page=${page}&_total=${total}&_user=${user}`,
-    options: {
-      method: "GET",
-      cache: "no-store" as const,
-    },
   };
 };
 
