@@ -1,7 +1,7 @@
 "use client";
 
 import photoPost from "@/src/actions/photo-post";
-import { ErrorMessage } from "@/src/error-message";
+import { ErrorMessage } from "@/src/components/error-message";
 import React, { useActionState } from "react";
 import { useFormStatus } from "react-dom";
 import Button from "../button";

@@ -1,7 +1,6 @@
 import photosGet from "@/src/actions/photos-get";
 import userGet from "@/src/actions/user-get";
 import { Feed } from "@/src/components/feed";
-import { IPhoto } from "@/src/types/photo";
 import { Metadata } from "next";
 import Link from "next/link";
 
@@ -16,7 +15,7 @@ const AccountPage = async () => {
   return (
     <section>
       {data?.length ? (
-        <Feed photos={data as IPhoto[]} />
+        <Feed photos={data} user={user?.username} />
       ) : (
         <div>
           <p

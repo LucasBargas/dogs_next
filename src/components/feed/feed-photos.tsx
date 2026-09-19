@@ -3,15 +3,11 @@ import Image from "next/image";
 import Link from "next/link";
 import styles from "./styles.module.css";
 
-interface FeedPhotosProps {
-  photos: IPhoto[];
-}
-
-export const FeedPhotos = ({ photos }: FeedPhotosProps) => {
+export const FeedPhotos = ({ photos }: { photos: IPhoto[] }) => {
   return (
     <ul className={`${styles.feed} animeLeft`}>
-      {photos.map((el, i) => (
-        <li key={el.id + i} className={styles.photo}>
+      {photos.map((el) => (
+        <li key={el.id} className={styles.photo}>
           <Link href={`/foto/${el.id}`} scroll={false}>
             <Image
               src={el.src}

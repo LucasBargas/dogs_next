@@ -10,14 +10,16 @@ interface PhotosGetParams {
   user?: 0 | string;
 }
 
-const photosGet = async ({
-  page = 1,
-  total = 6,
-  user = 0,
-}: PhotosGetParams = {}) => {
+const photosGet = async (
+  { page = 1, total = 6, user = 0 }: PhotosGetParams = {},
+  optionsFront?: RequestInit,
+) => {
   try {
+    const options = optionsFront || {
+      next: { revalidate: 10, tags: ["photos"] },
+    };
     const { url } = PHOTOS_GET({ page, total, user });
-    const res = await fetch(url);
+    const res = await fetch(url, options);
 
     if (!res.ok) throw new Error("Erro ao buscar fotos.");
 

@@ -1,7 +1,7 @@
 "use client";
 
 import login from "@/src/actions/login";
-import { ErrorMessage } from "@/src/error-message";
+import { ErrorMessage } from "@/src/components/error-message";
 import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
