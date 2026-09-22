@@ -1,16 +1,38 @@
+import photoGet from "@/src/actions/photo-get";
+import { Photo } from "@/src/components/photo";
+import { notFound } from "next/navigation";
+
 interface PhotoIdPageProps {
   params: Promise<{
-    id: number;
+    id: string;
   }>;
 }
 
+interface IPageParams {
+  params: Promise<{
+    id: string;
+  }>;
+}
+
+export const generateMetadata = async ({ params }: IPageParams) => {
+  const { id } = await params;
+  const { data } = await photoGet(id);
+
+  return {
+    title: data ? `Dogs | ${data.photo.title}` : "Dogs | Foto",
+  };
+};
+
 const PhotoIdPage = async ({ params }: PhotoIdPageProps) => {
   const { id } = await params;
+  const { data } = await photoGet(id);
+
+  if (!data) return notFound();
 
   return (
-    <div>
-      <h1>Id da página: {id}</h1>
-    </div>
+    <section className="container mainContainer">
+      <Photo data={data} single />
+    </section>
   );
 };
 
