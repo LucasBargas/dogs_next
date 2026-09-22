@@ -15,9 +15,7 @@ const photosGet = async (
   optionsFront?: RequestInit,
 ) => {
   try {
-    const options = optionsFront || {
-      next: { revalidate: 10, tags: ["photos"] },
-    };
+    const options = optionsFront;
     const { url } = PHOTOS_GET({ page, total, user });
     const res = await fetch(url, options);
 

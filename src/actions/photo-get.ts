@@ -20,12 +20,7 @@ const photoGet = async (id: string) => {
   try {
     const { url } = PHOTO_GET(id);
 
-    const res = await fetch(url, {
-      next: {
-        revalidate: 60,
-        tags: ["photos", "comment"],
-      },
-    });
+    const res = await fetch(url);
 
     if (!res.ok) throw new Error("Erro ao buscar a foto.");
 

@@ -1,6 +1,5 @@
 "use server";
 
-import { revalidateTag } from "next/cache";
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 import { PHOTO_POST } from "../functions/api";
@@ -33,7 +32,6 @@ const photoPost = async (state: {}, formData: FormData) => {
     return apiError(error);
   }
 
-  revalidateTag("photos", "max");
   redirect("/conta");
 };
 

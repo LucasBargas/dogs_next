@@ -4,7 +4,7 @@ import { IPhotoData } from "@/src/actions/photo-get";
 import { useUser } from "@/src/hooks/use-user";
 import Image from "next/image";
 import Link from "next/link";
-import { PhotoDelete } from "./photo-delete";
+import { PhotoDelete } from "../photo-delete";
 import styles from "./styles.module.css";
 
 export const Photo = ({

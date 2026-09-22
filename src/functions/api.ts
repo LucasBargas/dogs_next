@@ -70,15 +70,9 @@ export const COMMENT_POST = (id: number, body: object, token: string) => {
   };
 };
 
-export const PHOTO_DELETE = (id: number, token: string) => {
+export const PHOTO_DELETE = (id: string) => {
   return {
     url: `${API_URL}/api/photo/${id}`,
-    options: {
-      method: "DELETE",
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    },
   };
 };
 
