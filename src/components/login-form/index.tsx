@@ -1,7 +1,6 @@
 "use client";
 
 import login from "@/src/actions/login";
-import { ErrorMessage } from "@/src/components/error-message";
 import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
@@ -9,6 +8,7 @@ import { useRouter } from "next/navigation";
 import React, { useActionState } from "react";
 import { useFormStatus } from "react-dom";
 import Button from "../button";
+import { ErrorMessage } from "../error-message";
 import { Input } from "../input";
 import styles from "./styles.module.css";
 

@@ -4,6 +4,7 @@ import { IPhotoData } from "@/src/actions/photo-get";
 import { useUser } from "@/src/hooks/use-user";
 import Image from "next/image";
 import Link from "next/link";
+import PhotoComments from "../photo-comments";
 import { PhotoDelete } from "../photo-delete";
 import styles from "./styles.module.css";
 
@@ -20,7 +21,13 @@ export const Photo = ({
   return (
     <div className={`${styles.photo} ${single ? styles.single : ""}`}>
       <div className={styles.img}>
-        <Image src={photo.src} alt={photo.title} width={1000} height={1000} />
+        <Image
+          src={photo.src}
+          alt={photo.title}
+          width={1000}
+          height={1000}
+          loading="eager"
+        />
       </div>
       <div className={styles.details}>
         <div>
@@ -41,7 +48,7 @@ export const Photo = ({
           </ul>
         </div>
       </div>
-      {/* <PhotoComments single={single} id={photo.id} comments={comments} /> */}
+      <PhotoComments single={single} id={photo.id} comments={comments} />
     </div>
   );
 };

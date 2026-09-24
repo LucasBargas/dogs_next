@@ -1,6 +1,5 @@
 "use client";
 
-import { ErrorMessage } from "@/src/error-message";
 import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useActionState } from "react";
@@ -8,6 +7,7 @@ import { useFormStatus } from "react-dom";
 
 import passwordReset from "@/src/actions/password-reset";
 import Button from "../button";
+import { ErrorMessage } from "../error-message";
 import { Input } from "../input";
 import styles from "./styles.module.css";
 
