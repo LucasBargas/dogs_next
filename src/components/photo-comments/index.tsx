@@ -12,21 +12,23 @@ interface PhotoCommentsProps {
   comments: IComment[];
 }
 
-const PhotoComments = ({ single, id, comments }: PhotoCommentsProps) => {
-  const [commentsState, setCommentsState] = React.useState(() => comments);
+const PhotoComments = (props: PhotoCommentsProps) => {
+  const [commentsState, setCommentsState] = React.useState(
+    () => props.comments,
+  );
   const commentsSection = React.useRef<HTMLUListElement>(null);
   const { user } = useUser();
 
   React.useEffect(() => {
     if (commentsSection.current)
       commentsSection.current.scrollTop = commentsSection.current.scrollHeight;
-  }, [commentsState]);
+  }, []);
 
   return (
     <>
       <ul
         ref={commentsSection}
-        className={`${styles.comments} ${single ? styles.single : ""}`}
+        className={`${styles.comments} ${props.single ? styles.single : ""}`}
       >
         {commentsState.map((comment) => (
           <li key={comment.comment_ID}>
@@ -37,8 +39,8 @@ const PhotoComments = ({ single, id, comments }: PhotoCommentsProps) => {
       </ul>
       {user && (
         <PhotoCommentsForm
-          single={single}
-          id={id}
+          single={props.single}
+          id={props.id}
           setComments={setCommentsState}
         />
       )}

@@ -24,11 +24,7 @@ const FormButton = () => {
   );
 };
 
-export const PhotoCommentsForm = ({
-  single,
-  id,
-  setComments,
-}: PhotoCommentsFormProps) => {
+export const PhotoCommentsForm = (props: PhotoCommentsFormProps) => {
   const formRef = React.useRef<HTMLFormElement>(null);
   const [state, action] = useActionState(commentPost, {
     ok: false,
@@ -38,14 +34,14 @@ export const PhotoCommentsForm = ({
 
   React.useEffect(() => {
     if (state.ok && state.data) {
-      setComments((prev) => [...prev, state.data]);
+      props.setComments((prev) => [...prev, state.data]);
       formRef.current?.reset();
     }
-  }, [state, setComments]);
+  }, [state, props]);
 
   return (
     <form
-      className={`${styles.form} ${single ? styles.single : ""}`}
+      className={`${styles.form} ${props.single ? styles.single : ""}`}
       action={action}
       ref={formRef}
     >
@@ -55,7 +51,7 @@ export const PhotoCommentsForm = ({
         id="comment"
         placeholder="Comente..."
       ></textarea>
-      <input type="hidden" name="id" value={id} />
+      <input type="hidden" name="id" value={props.id} />
       <FormButton />
       <ErrorMessage error={state.error} />
     </form>
