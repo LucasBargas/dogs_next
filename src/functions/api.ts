@@ -80,14 +80,8 @@ export const PASSWORD_RESET = () => {
   };
 };
 
-export const STATS_GET = (token: string) => {
+export const STATS_GET = () => {
   return {
     url: `${API_URL}/api/stats`,
-    options: {
-      method: "GET",
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    },
   };
 };

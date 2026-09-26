@@ -61,6 +61,7 @@ export const AccountHeader = () => {
           href="/conta"
           className={pathname === "/conta" ? "active" : ""}
           onClick={handleMenuClick}
+          title="Conta"
         >
           <FeedIcon />
           {mobile && "Minhas Fotos"}
@@ -70,6 +71,7 @@ export const AccountHeader = () => {
           href="/conta/estatisticas"
           className={pathname === "/conta/estatisticas" ? "active" : ""}
           onClick={handleMenuClick}
+          title="Estatísticas"
         >
           <EstatisticasIcon />
           {mobile && "Estatísticas"}
@@ -79,12 +81,13 @@ export const AccountHeader = () => {
           href="/conta/postar"
           className={pathname === "/conta/postar" ? "active" : ""}
           onClick={handleMenuClick}
+          title="Postar foto"
         >
           <AdicionarIcon />
           {mobile && "Adicionar Foto"}
         </Link>
 
-        <button onClick={handleLogout}>
+        <button onClick={handleLogout} title="Sair">
           <SairIcon />
           {mobile && "Sair"}
         </button>

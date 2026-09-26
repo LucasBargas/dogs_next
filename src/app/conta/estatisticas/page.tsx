@@ -1,3 +1,5 @@
+import statsGet from "@/src/actions/stats-get";
+import AccountStatsLoader from "@/src/components/account-stats/account-stats-loader";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -6,8 +8,16 @@ export const metadata: Metadata = {
     "Página de estatísticas do site Dogs desenvolvido por Lucas Bargas.",
 };
 
-const StatisticsPage = () => {
-  return <div>StatistcsPage</div>;
+const StatisticsPage = async () => {
+  const { data } = await statsGet();
+
+  if (!data) return null;
+
+  return (
+    <section>
+      <AccountStatsLoader data={data} />
+    </section>
+  );
 };
 
 export default StatisticsPage;
