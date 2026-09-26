@@ -1,12 +1,12 @@
 "use client";
 
 import passwordLost from "@/src/actions/password-lost";
-import { ErrorMessage } from "@/src/error-message";
 import { usePathname } from "next/navigation";
 import { useActionState } from "react";
 import { useFormStatus } from "react-dom";
 
 import Button from "../button";
+import { ErrorMessage } from "../error-message";
 import { Input } from "../input";
 
 const FormButton = () => {
