@@ -1,8 +1,9 @@
 import { NextRequest, NextResponse } from "next/server";
+import verifyToken from "./functions/verify-token";
 
-export const proxy = (req: NextRequest) => {
+export const proxy = async (req: NextRequest) => {
   const token = req.cookies.get("token")?.value;
-  const authenticated = token ? true : false;
+  const authenticated = token ? await verifyToken(token) : false;
 
   if (!authenticated && req.nextUrl.pathname.startsWith("/conta")) {
     return NextResponse.redirect(new URL("/login", req.url));
