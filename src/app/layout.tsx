@@ -1,6 +1,7 @@
 import { config } from "@fortawesome/fontawesome-svg-core";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import type { Metadata } from "next";
+import React from "react";
 import userGet from "../actions/user-get";
 import { UserContextProvider } from "../contexts/user-context";
 import { type_second } from "../functions/font";
@@ -14,7 +15,13 @@ export const metadata: Metadata = {
   description: "Rede social para cães.",
 };
 
-const RootLayout = async ({ children }: { children: React.ReactNode }) => {
+const RootLayout = async ({
+  children,
+  modal,
+}: {
+  children: React.ReactNode;
+  modal: React.ReactNode;
+}) => {
   const { data } = await userGet();
   return (
     <html lang="pt-br">
@@ -23,6 +30,7 @@ const RootLayout = async ({ children }: { children: React.ReactNode }) => {
           <div className="App">
             <Header />
             <main className="AppBody">{children}</main>
+            <div>{modal}</div>
             <Footer />
           </div>
         </UserContextProvider>
