@@ -49,8 +49,8 @@ export const ResetLoginForm = ({ resetKey, login }: ResetLoginFormProps) => {
         </button>
       </div>
 
-      <input type="text" name="key" value={resetKey} />
-      <input type="text" name="login" value={login} />
+      <input type="hidden" name="key" value={resetKey} />
+      <input type="hidden" name="login" value={login} />
 
       <ErrorMessage error={state.error} />
 
