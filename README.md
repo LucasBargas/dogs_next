@@ -1,6 +1,6 @@
-# Dogs — Next.js
+# Dogs
 
-**Dogs** é uma aplicação web desenvolvida com **Next.js e React**, baseada no projeto Dogs. A aplicação permite visualizar, publicar e interagir com fotos de cachorros, além de oferecer recursos de autenticação, comentários, curtidas e estatísticas.
+**Dogs** é uma aplicação web desenvolvida com **Next.js**, baseada no projeto Dogs da [**Origamid**](https://www.origamid.com/). A aplicação permite visualizar, publicar e interagir com fotos de cachorros, além de oferecer recursos de autenticação, comentários, curtidas e estatísticas.
 
 ## 🔗 Link para visualizar o projeto
 
