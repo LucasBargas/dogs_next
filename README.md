@@ -1,36 +1,90 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Dogs — Next.js
 
-## Getting Started
+**Dogs** é uma aplicação web desenvolvida com **Next.js e React**, baseada no projeto Dogs. A aplicação permite visualizar, publicar e interagir com fotos de cachorros, além de oferecer recursos de autenticação, comentários, curtidas e estatísticas.
 
-First, run the development server:
+## 🔗 Link para visualizar o projeto
+
+[https://dogs-lucasbargas.vercel.app/](https://dogs-lucasbargas.vercel.app/)
+
+## 📌 Principais recursos do App
+
+- Cadastro e autenticação de usuários;
+- Login e logout;
+- Visualização de fotos de cachorros;
+- Publicação de novas fotos;
+- Adição e visualização de comentários;
+- Página individual para cada foto;
+- Visualização de estatísticas;
+- Upload de imagens;
+- Gráficos para visualização de dados.
+
+## 🛠️ Tecnologias utilizadas
+
+| Tecnologia   | Versão |
+| ------------ | ------ |
+| Next.js      | 16.3.1 |
+| TypeScript   | 5      |
+| Victory      | 37.3.6 |
+| Font Awesome | 7.3.1  |
+| JOSE         | 6.2.12 |
+| ESLint       | 9      |
+| Prettier     | 3.9.6  |
+
+### Principais recursos utilizados
+
+- **Next.js App Router**
+- **React Server Components**
+- **Server Actions**
+- **Cookies**
+- **Autenticação e validação de tokens**
+- **TypeScript**
+- **Tailwind CSS**
+- **Victory Charts**
+- **React Compiler**
+- **Font Awesome**
+
+## 🚀 Como executar este projeto
+
+### Pré-requisitos
+
+- Possuir o [Node.js](https://nodejs.org/) instalado;
+- Possuir o npm instalado.
+
+### Clone o repositório
+
+```bash
+git clone https://github.com/LucasBargas/dogs_next.git
+```
+
+#### Entre na pasta
+
+```bash
+cd dogs_next
+```
+
+#### Instale as dependências
+
+```bash
+npm install
+```
+
+#### Configure as variáveis de ambiente
+
+```bash
+# Crie um arquivo .env.local e passe os valores
+NEXT_PUBLIC_SITE_URL=http://localhost:3000
+```
+
+#### Execute o App
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+# Autor
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Lucas Bargas da Silva
+</br>
+<https://projetoslucasbargas.vercel.app/>
+</br>
+<https://www.linkedin.com/in/lucas-bargas/>
